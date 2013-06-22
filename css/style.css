@@ -637,7 +637,7 @@ img.icon_img {
 	left:105px;
 	width:65px;
 	height:47px;
-	background:url(../images/ac_plmin_2.png) no-repeat;
+	/*background:url(../images/ac_plmin_2.png) no-repeat;*/
 }
 #slide8 .vert_line {
 	position:absolute;
