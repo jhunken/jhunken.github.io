@@ -8,6 +8,7 @@
     <link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/cal-heatmap.css" type="text/css" media="screen">
 
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
 
@@ -19,6 +20,9 @@
     <script type="text/javascript" src="js/jquery.stellar.min.js"></script>
     <script type="text/javascript" src="js/waypoints.min.js"></script>
 
+    <!--commit calendar -->
+    <script type="text/javascript" src="js/d3.v3.js"></script>
+    <script type="text/javascript" src="js/cal-heatmap.js"></script>
     <!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.src.js"></script>
@@ -109,7 +113,22 @@
             <div class="clear"></div>
 
             <div id="content">
-                <ul class="ca-menu">
+                <p id="P1">
+                    <a href="#" class="badge tag" title="Gold Badge"><span class="gold"></span>CSS</a>
+                    <a href="#" class="badge tag" title="Gold Badge"><span class="gold"></span>jQuery</a>
+                    <a href="#" class="badge tag" title="Gold Badge"><span class="gold"></span>html5</a>
+                    <a href="#" class="badge tag" title="Gold Badge"><span class="gold"></span>JavaScript</a>
+                    <a href="#" class="badge tag" title="Gold Badge"><span class="gold"></span>Node.js</a>
+                    <a href="#" class="badge tag" title="Gold Badge"><span class="gold"></span>ASP.NET MVC</a>
+                    <a href="#" class="badge tag" title="Gold Badge"><span class="gold"></span>APIs</a>
+                    <a href="#" class="badge tag" title="Gold Badge"><span class="gold"></span>Software Development</a>
+                    <a href="#" class="badge tag" title="Gold Badge"><span class="gold"></span>KnockoutJS</a>
+                    <a href="#" class="badge tag" title="Gold Badge"><span class="gold"></span>Responsive Design</a>
+
+
+                    
+                </p>
+                <!-- <ul class="ca-menu">
                     <li class="grid_4">
                         <a class="servc_block" href="javascript:void(0);" alt="">
                             <div class="icon_bord">
@@ -147,7 +166,7 @@
                         </a>
                     </li>
                     <div class="clear"></div>
-                </ul>
+                </ul>-->
 
             </div>
 
@@ -167,67 +186,22 @@
             <div id="content">
                 <div class="grid_12">
                     <div class="user-tab-content">
+                        <h3>GitHub Contributions</h3>
+                        <div id="cal-heatmap"></div>
+                        <h3>StoackOverflow Badges</h3>
+                        <p id="badges">
+                            <a href="http://stackoverflow.com/users/912787/junken" class="badge tag" title="First down vote"><span class="bronze"></span>Critic</a>
+                            <a href="http://stackoverflow.com/users/912787/junken" class="badge tag" title="Active member for a year, earning at least 200 reputation"><span class="silver"></span>Yearling</a>
+                            <a href="http://stackoverflow.com/users/912787/junken" class="badge tag" title="Answer score of 25 or more"><span class="silver"></span>Good Answer</a>
+                            <a href="http://stackoverflow.com/users/912787/junken" class="badge tag" title="Answered first question with score of 1 or more"><span class="bronze"></span>Teacher</a>
+                            <a href="http://stackoverflow.com/users/912787/junken" class="badge tag" title="Visited the site each day for 30 consecutive days"><span class="silver"></span>Enthusiast</a>
+                            <a href="http://stackoverflow.com/users/912787/junken" class="badge tag" title="Accepted answer and score of 40 or more"><span class="silver"></span>Guru</a>
+                            <a href="http://stackoverflow.com/users/912787/junken" class="badge tag" title="Answer score of 10 or more"><span class="bronze"></span>Nice Answer</a>
+                            <a href="http://stackoverflow.com/users/912787/junken" class="badge tag" title="Asked a question and accepted an answer"><span class="bronze"></span>Scholar</a>
+                            <a href="http://stackoverflow.com/users/912787/junken" class="badge tag" title="First up vote"><span class="bronze"></span>Supporter</a>
+                            <a href="http://stackoverflow.com/users/912787/junken" class="badge tag" title="Answered a question more than 60 days later with score of 5 or more"><span class="silver"></span>Necromancer</a>
 
-                        <table class="user-badges">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <a href="/help/badges/7/critic?userid=912787" title="bronze badge: First down vote" class="badge"><span class="badge3"></span>&nbsp;Critic</a>
-
-
-                                    </td>
-                                    <td>
-                                        <a href="/help/badges/13/yearling?userid=912787" title="silver badge: Active member for a year, earning at least 200 reputation" class="badge"><span class="badge2"></span>&nbsp;Yearling</a>
-
-
-                                    </td>
-                                    <td>
-                                        <a href="/help/badges/24/good-answer?userid=912787" title="silver badge: Answer score of 25 or more" class="badge"><span class="badge2"></span>&nbsp;Good Answer</a>
-
-
-                                    </td>
-                                    <td>
-                                        <a href="/help/badges/1/teacher?userid=912787" title="bronze badge: Answered first question with score of 1 or more" class="badge"><span class="badge3"></span>&nbsp;Teacher</a>
-
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="/help/badges/71/enthusiast?userid=912787" title="silver badge: Visited the site each day for 30 consecutive days" class="badge"><span class="badge2"></span>&nbsp;Enthusiast</a>
-
-
-                                    </td>
-                                    <td>
-                                        <a href="/help/badges/18/guru?userid=912787" title="silver badge: Accepted answer and score of 40 or more" class="badge"><span class="badge2"></span>&nbsp;Guru</a>
-
-
-                                    </td>
-                                    <td>
-                                        <a href="/help/badges/23/nice-answer?userid=912787" title="bronze badge: Answer score of 10 or more" class="badge"><span class="badge3"></span>&nbsp;Nice Answer</a>
-
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="/help/badges/10/scholar?userid=912787" title="bronze badge: Asked a question and accepted an answer" class="badge"><span class="badge3"></span>&nbsp;Scholar</a>
-
-
-                                    </td>
-                                    <td>
-                                        <a href="/help/badges/6/supporter?userid=912787" title="bronze badge: First up vote" class="badge"><span class="badge3"></span>&nbsp;Supporter</a>
-
-
-                                    </td>
-                                    <td>
-                                        <a href="/help/badges/17/necromancer?userid=912787" title="silver badge: Answered a question more than 60 days later with score of 5 or more" class="badge"><span class="badge2"></span>&nbsp;Necromancer</a>
-
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        </p>
 
                     </div>
                 </div>
@@ -259,8 +233,8 @@
                         </h3>
                         <div class="accord_cont">
                             <ul>
-                                <li>Designed and developed from ground up offline web application to support field repairs in areas with no internet using phones and tablet devices. In addition to front-end and UI, this included developing REST API for CRUD operations. Technologies used:
-Knockout.js, Bootstrap responsive design, HTML5 localStorage and offline caching, 
+                                <li>Designed and developed from ground up offline web application to support field repairs in areas with no internet using phones and tablet devices. In addition to front-end and UI, this included developing REST API for CRUD operations. <em>Technologies used:</em>
+                                    Knockout.js, Bootstrap responsive design, HTML5 localStorage and offline caching, 
 ASP.NET MVC API, jQuery</li>
                                 <li>Created rich web app to allow field sales to generate quotes while on-site using phones and tablets. Technologies used: Knockout.js, jQuery Mobile, ASP.NET MVC</li>
                                 <li>Utilized latest HTML5 technologies to develop cross-browser compatible web 
@@ -351,7 +325,7 @@ information to provide up to day call statistics</li>
                     <div class="gallery-list">
                         <div class="img_block">
                             <div class="hover_img">
-                                <img class="portf_img" src="http://www.wordnik.com/assets/homepage_logo-e11c4ddbd403e9f2124cbf1b2f4db542.png" alt="" />
+                                <img class="portf_img" src="images/wordgam.png" alt="" />
                                 <div class="item_description">
                                     <p>WordGam</p>
                                     Touch Enable Word Guess Game
@@ -371,7 +345,7 @@ information to provide up to day call statistics</li>
                                 </div>
                             </div>
                         </div>
-                        <div class="img_block">
+                        <!--        <div class="img_block">
                             <div class="hover_img">
                                 <img class="portf_img" src="images/portfolio/3.jpg" alt="" />
                                 <div class="item_description">
@@ -436,7 +410,7 @@ information to provide up to day call statistics</li>
                                     <span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
 
                         <div class="clear"></div>
                     </div>
@@ -462,19 +436,19 @@ information to provide up to day call statistics</li>
             <div class="clear"></div>
 
             <div class="grid_12">
-                <img class="foto" src="images/foto.jpg" alt="" />
+                <img class="foto" src="images/IMG_2460.jpg" alt="" />
                 <h5>Jeff Hunken ( Web developer )</h5>
-                <p>Nullam aliquam, mauris sit amet convallis condimentum, massa tortor pretium magna, vitae rutrum libero nibh vitae nisl. Sed imperdiet dictum sapien. Mauris tortor massa, euismod eu</p>
+                <!--<p>Nullam aliquam, mauris sit amet convallis condimentum, massa tortor pretium magna, vitae rutrum libero nibh vitae nisl. Sed imperdiet dictum sapien. Mauris tortor massa, euismod eu</p>-->
                 <div class="contact_det">
-                    <a href="javascript:void(0);">jhunken@gmail.com</a>
+                    <a href="mailto:jhunken@gmail.com">jhunken@gmail.com</a>
                     <p>(+1) 925.235.0472</p>
                 </div>
-                <div class="socials">
+                <!--<div class="socials">
                     <a class="soc1" href="javascript:void(0);"></a>
                     <a class="soc2" href="javascript:void(0);"></a>
                     <a class="soc3" href="javascript:void(0);"></a>
                     <a class="soc4" href="javascript:void(0);"></a>
-                </div>
+                </div>-->
             </div>
             <div class="clear"></div>
 
