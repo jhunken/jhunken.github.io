@@ -16,11 +16,15 @@ function mymargtop() {
 function drop_menu() {
     //DROP menu
     if ($(window).width() < 750) {
+        $("#github").hide();
         $(".navigation li").click(function () {
             $(".navigation").slideToggle("slow");
         });
+    } else {
+        $("#github").show();
     }
 }
+
 
 jQuery(document).ready(function ($) {
     //commit calendar
@@ -84,6 +88,7 @@ jQuery(document).ready(function ($) {
         data: convertedData,
         start: startDate,
         afterLoadData: parser,
+        //cellsize: 6,
         domain: "month",					// Group data by days
         subDomain: "day",				// Split each day by hours
         range: 13,						// Number of days to display
